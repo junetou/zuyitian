@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="userMaintenanceService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>http://localhost:9000/woo-appserver-service/remoting/UserMaintenanceService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>org.andy.work.appserver.service.IUserMaintenanceService</value>
+		</property> 
+	</bean>
+	
+	<bean id="accountMaintenanceService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>http://localhost:9000/woo-appserver-service/remoting/AccountMaintenanceService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>org.andy.work.appserver.service.IAccountMaintenanceService</value>
+		</property> 
+	</bean>
+	
+	<bean id="addressMaintenanceService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>http://localhost:9000/woo-appserver-service/remoting/AddressMaintenanceService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>org.andy.work.appserver.service.IAddressMaintenanceService</value>
+		</property> 
+	</bean>
+	
+	<bean id="solrPublishMaintenanceService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>http://localhost:9000/woo-appserver-service/remoting/SolrPublishMaintenanceService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>org.andy.work.appserver.service.ISolrPublishMaintenanceService</value>
+		</property> 
+	</bean>
+	
+	<bean id="solrSearchMaintenanceService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>http://localhost:9000/woo-appserver-service/remoting/SolrSearchMaintenanceService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>org.andy.work.appserver.service.ISolrSearchMaintenanceService</value>
+		</property> 
+	</bean>
+	
+	<bean id="shoppingCartMaintenanceService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>http://localhost:9000/woo-appserver-service/remoting/ShoppingCartMaintenanceService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>org.andy.work.appserver.service.IShoppingCartMaintenanceService</value>
+		</property> 
+	</bean>
+	
+	<bean id="productMaintenanceService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>http://localhost:9000/woo-appserver-service/remoting/ProductMaintenanceService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>org.andy.work.appserver.service.IProductMaintenanceService</value>
+		</property> 
+	</bean>
+	
+	<bean id="commonMaintenanceService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>http://localhost:9000/woo-appserver-service/remoting/CommonMaintenanceService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>org.andy.work.appserver.service.ICommonMaintenanceService</value>
+		</property> 
+	</bean>
+	
+	<bean id="articleMaintenanceService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>http://localhost:9000/woo-appserver-service/remoting/ArticleMaintenanceService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>org.andy.work.appserver.service.IArticleMaintenanceService</value>
+		</property> 
+	</bean>
+	
+	<bean id="testMain" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>http://localhost:9000/woo-appserver-service/remoting/TestMain</value>
+		</property>
+		<property name="serviceInterface">
+			<value>org.andy.work.appserver.service.ITestMain</value>
+		</property> 
+	</bean>
+
+	<bean id="taogeMain" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+			<property name="serviceUrl">
+				<value>http://localhost:9000/woo-appserver-service/remoting/TaogeMain</value>
+			</property>
+			<property name="serviceInterface">
+				<value>org.andy.work.appserver.service.ITaogeMain</value>
+			</property> 
+		</bean>
+		
+	<bean id="newhourMain" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+			<property name="serviceUrl">
+				<value>http://localhost:9000/woo-appserver-service/remoting/NewhourMain</value>
+			</property>
+			<property name="serviceInterface">
+				<value>org.andy.work.appserver.service.INewhourMain</value>
+			</property> 
+		</bean>
+	
+		<bean id="newtestMain" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+			<property name="serviceUrl">
+				<value>http://localhost:9000/woo-appserver-service/remoting/NewtestMain</value>
+			</property>
+			<property name="serviceInterface">
+				<value>org.andy.work.appserver.service.INewtestMain</value>
+			</property> 
+		</bean>
+	
+	<bean id="detailmessageMain" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+	     <property name="serviceUrl">
+	       <value>http://localhost:9000/woo-appserver-service/remoting/DetailmessageMain</value>
+	     </property>
+	     <property name="serviceInterface">
+	       <value>org.andy.work.appserver.service.IDetailmessageMain</value>
+	     </property>
+	</bean>
+	
+	<bean id="commentMain" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+	    <property name="serviceUrl">
+	     <value>http://localhost:9000/woo-appserver-service/remoting/CommentMain</value>
+	    </property>
+	    <property name="serviceInterface">
+	     <value>org.andy.work.appserver.service.ICommentMain</value>
+	    </property>    
+	</bean>
+	
+	<bean id="fedMain" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+	    <property name="serviceUrl">
+	     <value>http://localhost:9000/woo-appserver-service/remoting/FedMain</value>
+	    </property>
+	    <property name="serviceInterface">
+	     <value>org.andy.work.appserver.service.IFedMain</value>
+	    </property>    
+	</bean>
+		
+	<bean id="tradeMain" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+	    <property name="serviceUrl">
+	     <value>http://localhost:9000/woo-appserver-service/remoting/TradeMain</value>
+	    </property>
+	    <property name="serviceInterface">
+	     <value>org.andy.work.appserver.service.ITradeMain</value>
+	    </property>    
+	</bean>	
+		
+		
+</beans>

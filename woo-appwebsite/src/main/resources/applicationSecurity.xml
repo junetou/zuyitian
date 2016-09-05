@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context 
+		   http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+    <context:component-scan base-package="org.adny.work.security" />
+	
+	<http>
+		<form-login 
+		    login-page="/member/login.htm"
+		    login-processing-url="/member/login/check" 
+		    authentication-success-handler-ref="authenticationSuccessHandler"
+		    authentication-failure-handler-ref="authenticationFailureHandler"
+		    password-parameter="l_pwd" 
+		    username-parameter="l_name"/>
+		<logout invalidate-session="true" logout-url="/member/logout" logout-success-url="/member/login.htm"/>
+		
+		<!-- 
+		<intercept-url pattern="/login/**" requires-channel="https"/>
+	    <intercept-url pattern="/reg/**" requires-channel="https"/>
+	    <intercept-url pattern="/res/**" requires-channel="any"/>
+	     
+	    <intercept-url pattern="/checkout/**" access="ROLE_B2B,ROLE_B2C"/>
+	    <intercept-url pattern="/order/**" access="ROLE_B2B,ROLE_B2C"/>
+	    <intercept-url pattern="/account/**" access="ROLE_B2B,ROLE_B2C"/>
+	   	-->
+	    <intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+	    
+	    <!-- 
+	    <custom-filter ref="userSessionFilter" position="LAST"/>
+	     -->
+		<session-management>
+		    <concurrency-control max-sessions="1" error-if-maximum-exceeded="true"/>
+		</session-management>
+	</http>
+	
+	<authentication-manager>
+		<authentication-provider user-service-ref="authenticationService">
+		     <password-encoder ref="hmacPasswordEncoderImpl">
+		        <salt-source user-property="salt"/>
+		    </password-encoder>
+		</authentication-provider>
+	</authentication-manager>
+	
+	<beans:bean id="authenticationSuccessHandler" class="org.adny.work.security.AuthenticationSuccessHandlerImpl"></beans:bean>
+	<beans:bean id="authenticationFailureHandler" class="org.adny.work.security.AuthenticationFailureHandlerImpl"></beans:bean>
+	
+	<!--beans:bean id="userSessionFilter" class="cn.baolon.bcs.ui.security.UserSessionFilter"/-->
+</beans:beans>

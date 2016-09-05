@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context 
+		   http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+    <context:component-scan base-package="org.andy.work.admin.security" />
+    
+    <!-- <http pattern="/res/js/**" security="none"/>
+	<http pattern="/res/css/**" security="none"/>
+	<http pattern="/res/img/**" security="none"/>
+	<http pattern="/res/sea-modules/**" security="none"/> -->
+    
+	<http >
+	    <intercept-url pattern="/secure/login" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+	    <intercept-url pattern="/register/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/**" access="ROLE_USER"/>
+		<intercept-url pattern="/portal/common/**" access="ROLE_COMMON"/>
+		<intercept-url pattern="/portal/admin/**" access="ROLE_ADMIN"/>
+		<intercept-url pattern="/portal/user/**" access="ROLE_ACCOUNT"/>
+		<intercept-url pattern="/portal/web/**" access="ROLE_WEB"/>
+		<intercept-url pattern="/portal/product/**" access="ROLE_PRODCENTRAL"/>
+		<intercept-url pattern="/portal/order/**" access="ROLE_ORDERCENTRAL"/>
+		<intercept-url pattern="/portal/mark/**" access="ROLE_MARK"/>
+		<intercept-url pattern="/portal/property/**" access="ROLE_PROPERTY"/>
+	
+		
+		<form-login 
+		    login-page="/secure/login"
+		    default-target-url="/portal"
+		    always-use-default-target="true"
+		    login-processing-url="/secure/check"
+		    authentication-success-handler-ref="authenticationSuccessHandler"
+		    authentication-failure-handler-ref="authenticationFailureHandler"
+		    password-parameter="password" 
+		    username-parameter="usrname"/>
+		    
+		<logout invalidate-session="true" logout-url="/logout"/>
+		
+		<session-management session-fixation-protection="newSession">
+		    <concurrency-control max-sessions="1" error-if-maximum-exceeded="true"/>
+		</session-management>
+	</http>
+	
+	
+	<authentication-manager>
+		<authentication-provider user-service-ref="adminAuthenticationService">
+		    <password-encoder ref="hmacPasswordEncoderImpl">
+		        <salt-source user-property="salt"/>
+		    </password-encoder>
+		</authentication-provider>
+		
+	</authentication-manager>
+	
+	<beans:bean id="authenticationSuccessHandler" class="org.andy.work.admin.security.AuthenticationSuccessHandlerImpl"></beans:bean>
+	<beans:bean id="authenticationFailureHandler" class="org.andy.work.admin.security.AuthenticationFailureHandlerImpl"></beans:bean>
+
+</beans:beans>

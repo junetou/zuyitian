@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+		"tiles-config_3_0.dtd">
+<tiles-definitions>
+	
+	<definition name="tiles/portalview" template="/WEB-INF/page/layout/index.jsp">
+	    <put-attribute name="content" value="/WEB-INF/page/view/index.jsp" />
+	</definition>
+	
+	<definition name="tiles/*" template="/WEB-INF/page/layout/main-layout.jsp">
+	    <put-attribute name="content" value="/WEB-INF/page/view/{1}.jsp" />
+	</definition>
+	
+	<definition name="tiles/includes/*" template="/WEB-INF/page/layout/main-layout.jsp">
+	    <put-attribute name="content" value="/WEB-INF/page/includes/{1}.jsp" />
+	</definition>
+	
+</tiles-definitions>

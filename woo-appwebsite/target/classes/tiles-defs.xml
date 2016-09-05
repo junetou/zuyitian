@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+		"tiles-config_3_0.dtd">
+<tiles-definitions>
+	
+	<!-- 首页 -->
+	<definition name="home-page/*" template="/view/layouts/layout.jsp">
+	    <put-attribute name="content" value="/view/page/{1}.jsp" />
+	</definition>
+	
+	<definition name="shopping-cart"  template="/view/layouts/buy-layout.jsp">
+	    <put-attribute name="content" value="/view/page/shopping-cart.jsp" />
+	</definition>
+	
+	<definition name="member/*" template="/view/layouts/layout.jsp">
+	    <put-attribute name="content" value="/view/page/{1}.jsp" />
+	</definition>
+	
+</tiles-definitions>
