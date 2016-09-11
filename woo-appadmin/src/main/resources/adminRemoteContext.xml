@@ -156,6 +156,15 @@
 	     <value>org.andy.work.appserver.service.ITradeMain</value>
 	    </property>    
 	</bean>	
+	
+	<bean id="needMain" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+	    <property name="serviceUrl">
+	     <value>http://localhost:9000/woo-appserver-service/remoting/NeedMain</value>
+	    </property>
+	    <property name="serviceInterface">
+	     <value>org.andy.work.appserver.service.INeedMain</value>
+	    </property>    
+	</bean>	
 		
 		
 </beans>

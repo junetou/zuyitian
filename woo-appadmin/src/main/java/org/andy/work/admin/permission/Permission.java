@@ -14,22 +14,23 @@ public enum Permission {
 	ARTICLE("ARTICLE", "web/article", MenuType.WEB_MENU, "", new String[]{OperationType.VIEW, OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.EXAMINE, OperationType.RELEASE, OperationType.EXPORT}),
 	ARTICLE_CATEGORY("ARTICLE_CATEGORY", "web/article/category", MenuType.WEB_MENU, "", new String[]{OperationType.VIEW, OperationType.ADD, OperationType.EDIT, OperationType.DELETE}),
 	
-	//地图详情
+	//物品操作
 	MAP("MAP", "admin/map/showmap",MenuType.COMMENT_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
-	CHAT("CHAT","admin/chat/wchat",MenuType.COMMENT_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
-	
-	//评论
-	COMMENT("COMMENT","admin/comment/showcomment",MenuType.COMMENT_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
-	ADDMESSAGE("ADDMESSAGE","admin/addmessage/show",MenuType.COMMENT_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
-	
 	THINGS("THINGS","admin/admin-message/showmessage",MenuType.COMMENT_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
-	//LEGAL("LEGAL","admin/legal/showlegal",MenuType.COMMENT_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
-	//MY("MY","admin/updatemessage/look",MenuType.COMMENT_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
-	SELLER("SELLER","admin/trade/seller",MenuType.COMMENT_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
-	BORROW("BORROW","admin/trade/borrow",MenuType.COMMENT_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
-	TRADE("TRADE","admin/trade/tradeing",MenuType.COMMENT_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
-	MY("MY","admin/updatemessage/look",MenuType.COMMENT_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
-	LEGAL("LEGAL","admin/legal/showlegal",MenuType.COMMENT_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE});
+	ADDMESSAGE("ADDMESSAGE","admin/addmessage/show",MenuType.COMMENT_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
+	COMMENT("COMMENT","admin/comment/showcomment",MenuType.COMMENT_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),	
+	//需求操作
+	NEEDMAP("NEEDMAP","admin/need/showmap",MenuType.NEEDCONTROL_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
+	CUSTOMER("CUSTOMER","admin/need/show",MenuType.NEEDCONTROL_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
+	NEED("NEED","admin/need/addneed",MenuType.NEEDCONTROL_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),	
+	MENEED("MENEED","admin/need/showmyneed",MenuType.NEEDCONTROL_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
+	//个人操作
+	SELLER("SELLER","admin/trade/seller",MenuType.TRADE_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
+	BORROW("BORROW","admin/trade/borrow",MenuType.TRADE_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
+	TRADE("TRADE","admin/trade/tradeing",MenuType.TRADE_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
+	MY("MY","admin/updatemessage/look",MenuType.TRADE_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
+	CHAT("CHAT","admin/chat/wchat",MenuType.TRADE_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE}),
+	LEGAL("LEGAL","admin/legal/showlegal",MenuType.TRADE_MENU,"",new String[]{OperationType.VIEW,OperationType.ADD, OperationType.EDIT, OperationType.DELETE, OperationType.RESET, OperationType.FREEZE});
 	
 	private String code;
 	private String url;

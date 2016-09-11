@@ -27,7 +27,7 @@ p.main {text-align:justify;text-indent:50px;}
 
 
 <div class="panel panel-default" style="background-color:#FFFFCC;width:400px;">
-<h1>声明</h1>
+<h1><b><i>声明</i></b></h1>
 <textarea style="width:400px; height:400px;background-color:#FFFFCC; ">声明:本网站框架和部分功能不是本人设计，请使用者遵守互联网使用原则，不发布低俗图片内容，本网站不用于商业用途，如有商业用途，请先与本人联系(QQ:756332784),否则本人不担任一切法律责任</textarea>
 <p class="date">2016年9月4日</p>
 </div>

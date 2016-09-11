@@ -85,7 +85,7 @@ input[type=checkbox], input[type=radio] {margin:0;}
     <div class="panel-heading" style="background-color:#FFFFCC ">
         <ol class="breadcrumb" style="background-color:#FFFFCC ">
 		  <!--  	<li><a href="#">首页 </a></li> -->
-		  	<li><a href="javascript:history.go(-1)" >返回</a></li>
+		  	<li><a href="javascript:history.go(-1)" ><b><i>返回</i></b></a></li>
 		  	<li style="text-align:center"><input type="text" name="keyWord" id="keyWord" placeholder="Search for..." style="background-color:#FFFFCC"  >
 		  	<span><input type="button"  onclick="javascript:seachMap()" value="搜索" ></span>
 		  	</li>

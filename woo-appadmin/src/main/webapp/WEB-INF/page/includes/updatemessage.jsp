@@ -26,8 +26,8 @@ input[type=checkbox], input[type=radio] {margin:0;}
 <div class="panel panel-default">
     <div class="panel-heading">
         <ol class="breadcrumb">
-		  	<li>首页 </li>
-		  	<li>修改物品信息</li>
+		  	<li><b><i>首页</i></b></li>
+		  	<li><b><i>修改物品信息</i></b></li>
 		  	<li><a href="javascript:history.go(-1)" class="btn btn-outline btn-info" >返回</a></li>
 		</ol>
     </div>

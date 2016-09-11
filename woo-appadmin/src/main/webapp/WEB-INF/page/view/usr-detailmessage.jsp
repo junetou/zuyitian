@@ -9,7 +9,7 @@
 <div class="panel panel-default"  style="background-color:#FFFFCC">
     <div class="panel-heading"  style="background-color:#FFFFCC">
         <ol class="breadcrumb"  style="background-color:#FFFFCC">
-		  	<li class="active">用户管理</li>
+		  	<li class="active"><b><i>查询物品</i></b></li>
 		</ol>
     </div>
     <div class="panel-body"  style="background-color:#FFFFCC">
@@ -26,7 +26,7 @@
 				<div id="dataTables-example_filter" class="dataTables_filter" style="background-color:#FFFFCC">
 					<form method="post"  style="background-color:#FFFFCC">
 						<div class="input-group">
-							<input type="text" name="keyWord" id="keyWord" value="${param.keyWord }" class="form-control" placeholder="Search for..." style="background-color:#FFFFCC" >
+							<input type="text" name="keyWord" id="keyWord" value="${param.keyWord }" class="form-control" placeholder="Search for(请在第一页搜索)..." style="background-color:#FFFFCC" >
 							<span class="input-group-btn">
 								<button type="submit" class="btn btn-default btnSearchSubmit">搜索</button>
 							</span>

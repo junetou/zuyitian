@@ -23,8 +23,8 @@
 <div class="panel panel-default" style="background-color:#FFFFCC">
     <div class="panel-heading" style="background-color:#FFFFCC">
         <ol class="breadcrumb" style="background-color:#FFFFCC">
-		  	<li>首页 </li>
-		  	<li>编辑个人信息</li>
+		  	<li><b><i>首页</i></b></li>
+		  	<li><b><i>编辑个人信息</i></b></li>
 		  	<li><a href="javascript:history.go(-1)" class="btn btn-outline btn-info" >返回</a></li>
 		</ol>
     </div>

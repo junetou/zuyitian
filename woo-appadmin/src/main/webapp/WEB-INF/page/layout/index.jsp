@@ -8,7 +8,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<link rel="icon" href="<woo:url value='/static/images/ico.ico'/>" type="image/x-icon">
+	<meta name="keywords" content="租一天" />
+	<meta name="description" content="租一天" />
+	<meta name="baidu-site-verification" content="Xr09oM1pMx" />
+	<link rel="icon" href="<woo:url value='/static/images/favicon.ico'/>" type="image/x-icon">
 	<title>租一天</title>
 	<link href="<woo:url value='/static/bootstrap/css/bootstrap.min.css'/>" rel="stylesheet">
 	<link href="<woo:url value='/static/bootstrap/css/metisMenu.min.css'/>" rel="stylesheet">

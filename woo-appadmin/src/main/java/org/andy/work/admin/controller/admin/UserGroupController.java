@@ -85,6 +85,8 @@ public class UserGroupController {
 			.addObject("webMenus", Permission.getMenus(MenuType.WEB_MENU))
 			.addObject("mapMenus",Permission.getMenus(MenuType.MAP_MENU))
 			.addObject("commentMenus",Permission.getMenus(MenuType.COMMENT_MENU))
+			.addObject("needcontrolMenus",Permission.getMenus(MenuType.NEEDCONTROL_MENU))
+			.addObject("tradecontrolMenus",Permission.getMenus(MenuType.TRADE_MENU))
 			.addObject("command", form)
 			.setViewName("tiles/includes/group-form");
 		return model;

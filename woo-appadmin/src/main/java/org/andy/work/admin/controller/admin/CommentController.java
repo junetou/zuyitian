@@ -162,7 +162,7 @@ public class CommentController {
 	
 	private Detailmessage getmessage(DetailMessage userForm) {
 	    Integer id=userForm.getId();
-        System.out.println(id);
+
 	    
 	    Detailmessage user=this.message.getmessage(id);
 	    Detailmessage use=new Detailmessage();

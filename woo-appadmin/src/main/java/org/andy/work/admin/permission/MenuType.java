@@ -16,5 +16,10 @@ public class MenuType {
 	//地图项目
 	public static final Integer MAP_MENU = 80;
 	public static final Integer COMMENT_MENU=90;
+	public static final Integer NEEDCONTROL_MENU=100;
+	public static final Integer TRADE_MENU=110;
+	
+	
+	
 	
 }

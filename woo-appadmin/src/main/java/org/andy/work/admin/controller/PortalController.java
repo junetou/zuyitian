@@ -124,13 +124,29 @@ public class PortalController {
 		if(this.hasRole(userDetails, RoleType.COMMENT)){
 			MainMenuDisplay menu=new MainMenuDisplay();
 			menu.setName(CommonUtils.getMessage("menu.me",request));
+			menu.setNodes(this.loadSubMenus(MenuType.COMMENT_MENU.intValue(), model, request));
 			menu.setType(MenuType.COMMENT_MENU.intValue());
-			LinkedList<MenuNode> node=this.loadSubMenus(MenuType.COMMENT_MENU.intValue(),model, request);
-			menu.setNodes(node);
+			menu.setClassIcon("glyphicon glyphicon-gift");
+			menus.add(menu);
+		}
+		
+		if(this.hasRole(userDetails, RoleType.NEEDCONTROL)){
+			MainMenuDisplay menu=new MainMenuDisplay();
+			menu.setName(CommonUtils.getMessage("menu.needcontroller",request));
+			menu.setType(MenuType.NEEDCONTROL_MENU.intValue());
+			menu.setNodes(this.loadSubMenus(MenuType.NEEDCONTROL_MENU.intValue(), model, request));
 			menu.setClassIcon("glyphicon glyphicon-list-alt");
 			menus.add(menu);
 		}
 		
+		if(this.hasRole(userDetails, RoleType.TRADE)){
+			MainMenuDisplay menu=new MainMenuDisplay();
+			menu.setName(CommonUtils.getMessage("menu.tradecontroller",request));
+			menu.setType(MenuType.TRADE_MENU.intValue());
+			menu.setNodes(this.loadSubMenus(MenuType.TRADE_MENU.intValue(), model, request));
+			menu.setClassIcon("glyphicon glyphicon-usd");
+			menus.add(menu);
+		}
 		
 		model.addObject("menus", menus).setViewName("tiles/portalview");
 		
@@ -185,14 +201,27 @@ public class PortalController {
 			case 70:
 				if (this.hasNode(userDetails, RoleType.USER)) {
 					menus.addAll(this.getUserCentralMunus(request, userDetails));
+					break;
 				}
 			case 80:
 				if(this.hasNode(userDetails, RoleType.MAP)){
 		            menus.addAll(this.getMap(request, userDetails));
+		            break;
 				}
 			case 90:
 				if(this.hasNode(userDetails, RoleType.COMMENT)){
 					menus.addAll(this.getCommentMunus(request, userDetails));
+					break;
+				}
+			case 100:
+				if(this.hasNode(userDetails, RoleType.NEEDCONTROL)){
+					menus.addAll(this.getNeedControllerMunus(request, userDetails));
+					break;
+				}
+			case 110:
+				if(this.hasNode(userDetails, RoleType.TRADE)){
+					menus.addAll(this.getTradeMunus(request, userDetails));
+					break;
 				}
  		}
 		
@@ -356,7 +385,7 @@ public class PortalController {
 		LinkedList<MenuNode> menus = new LinkedList<MenuNode>();
 
 		List<Permission> permissions = Permission.getMenus(MenuType.COMMENT_MENU);
-		if (!permissions.isEmpty()) {
+		
 			for (Permission perm : permissions) {
 				if (userDetails.getPermissions().contains(perm.getCode() + '_' + OperationType.VIEW)) {
 					String url = this.getUrl(perm.getCode(), request);
@@ -364,9 +393,42 @@ public class PortalController {
 							, 1, MenuType.COMMENT_MENU.toString(), true, false, url, this.getClassIcon(perm.getCode())));
 				}
 			}
-		}
+		
 		return menus;
 	}
 	
+        private LinkedList<MenuNode> getNeedControllerMunus(HttpServletRequest request, AdminUserDetails userDetails) {
+		
+		LinkedList<MenuNode> menus = new LinkedList<MenuNode>();
+
+		List<Permission> permissions = Permission.getMenus(MenuType.NEEDCONTROL_MENU);
 	
+			for (Permission perm : permissions) {
+				if (userDetails.getPermissions().contains(perm.getCode() + '_' + OperationType.VIEW)) {
+					String url = this.getUrl(perm.getCode(), request);
+					menus.add(new MenuNode(perm.getCode(), CommonUtils.getMessage("menu." + perm.getCode().toLowerCase(), request.getLocale(), request)
+							, 1, MenuType.NEEDCONTROL_MENU.toString(), true, false, url, this.getClassIcon(perm.getCode())));
+				}
+			}
+	
+		return menus;
+	}
+	
+        private LinkedList<MenuNode> getTradeMunus(HttpServletRequest request, AdminUserDetails userDetails) {
+    		
+    		LinkedList<MenuNode> menus = new LinkedList<MenuNode>();
+
+    		List<Permission> permissions = Permission.getMenus(MenuType.TRADE_MENU);
+    		
+    			for (Permission perm : permissions) {
+    				if (userDetails.getPermissions().contains(perm.getCode() + '_' + OperationType.VIEW)) {
+    					String url = this.getUrl(perm.getCode(), request);
+    					menus.add(new MenuNode(perm.getCode(), CommonUtils.getMessage("menu." + perm.getCode().toLowerCase(), request.getLocale(), request)
+    							, 1, MenuType.TRADE_MENU.toString(), true, false, url, this.getClassIcon(perm.getCode())));
+    				}
+    			}
+    		
+    		return menus;
+    	}
+
 }

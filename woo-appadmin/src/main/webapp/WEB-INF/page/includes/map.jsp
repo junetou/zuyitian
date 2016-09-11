@@ -27,7 +27,7 @@
 <div class="panel panel-default" style="background-color:#FFFFCC">
    <div class="panel-heading" style="background-color:#FFFFCC">
     <ol class="breadcrumb" style="background-color:#FFFFCC">
-     <li>地图</li>
+     <li><b><i>地图</i></b></li>
      <li><input type="text" id="keyWord" placeholder="Search for..." name="keyWord" />
      <span><input type="button"  onclick="javascript:seachMap()" value="搜索" ></span>
      </li>

@@ -11,7 +11,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<link rel="icon" href="<woo:url value='/static/images/ico.ico'/>" type="image/x-icon">
+	<meta name="baidu-site-verification" content="Xr09oM1pMx" />
+	<meta name="keywords" content="租一天" />
+	<meta name="description" content="租一天" />
+	<link rel="icon" href="<woo:url value='/static/images/favicon.ico'/>" type="image/x-icon">
 	<title>感谢朕使用租一天</title>
 	<link href="<woo:url value='/static/bootstrap/css/bootstrap.min.css'/>" rel="stylesheet">
     <link href="<woo:url value='/static/bootstrap/css/metisMenu.min.css'/>" rel="stylesheet">
@@ -30,7 +33,7 @@ body
 
 
 <body>
-	<div class="container" style=""background-color:#FF6633;" >
+	<div class="container" >
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default" style="background-color:#FFFFCC " >
@@ -41,10 +44,10 @@ body
                         <form action="<c:url value='/secure/check'/>" method="post">
                             <fieldset>
                                 <div class="form-group">
-                                	<input id="usrname" type="text" class="form-control" name="usrname" placeholder="Username" value="${username }" required autofocus/>
+                                <input id="usrname" type="text" class="form-control" name="usrname" placeholder="账户" value="${username }" required autofocus/> 
                                 </div>
                                 <div class="form-group">
-                                    <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
+                                <input id="password" type="password" class="form-control" name="password" placeholder="密码" required>
                                 </div>
                                 <div class="checkbox">
                                     <label>

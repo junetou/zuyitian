@@ -9,7 +9,7 @@
 <div class="panel panel-default" style="background-color:#FFFFCC;width:auto; ">
     <div class="panel-heading" style="background-color:#FFFFCC ">
         <ol class="breadcrumb" style="background-color:#FFFFCC ">
-		  	<li class="active" style="background-color:#FFFFCC ">我发布的东西</li>
+		  	<li class="active" style="background-color:#FFFFCC "><b><i>我发布的物品</i></b></li>
 		</ol>
     </div>
     <div class="panel-body">

@@ -17,5 +17,8 @@ public class RoleType {
 	public final static String CHAT="ROLE_CHAT";
 	public final static String COMMENT="ROLE_COMMENT";
 	public final static String register="ROLE_REGISTER";
+	public final static String NEEDCONTROL="ROLE_NEEDCONTROL";
+	public final static String TRADE="ROLE_TRADE";
+	
 	
 }

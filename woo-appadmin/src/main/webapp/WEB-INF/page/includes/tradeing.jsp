@@ -11,7 +11,7 @@
 <div class="panel panel-default"  style="background-color:#FFFFCC">
     <div class="panel-heading"  style="background-color:#FFFFCC">
         <ol class="breadcrumb"  style="background-color:#FFFFCC">
-		  	<li class="active"><b>正在交易</b></li>
+		  	<li class="active"><b><i>正在交易</i></b></li>
 		</ol>
     </div>
     <div class="panel-body"  style="background-color:#FFFFCC">

@@ -88,6 +88,35 @@ input[type=checkbox], input[type=radio] {margin:0;}
 				<input type="hidden" name="roles">
 			</div>
 		
+		   <div class="alert alert-info adminMenus">
+				<label class="ui-label" for="needcontrolMenus"><strong><spring:message code="menu.needcontroller"/></strong></label><br> 
+				<c:forEach var="menu" items="${needcontrolMenus}" varStatus="indexs"> 
+					<div class="form-group has-feedback has-success"><div class="btn-group">
+						<label class="btn btn-default"><strong><spring:message code="menu.${fn:toLowerCase(menu.code)}"/></strong></label> 
+						<c:forEach var="opt" items="${menu.opts}">
+							<label class="btn btn-default">
+								<form:checkbox path="opts" value="${menu.code}_${opt}"/> <spring:message code="menu.opt.${fn:toLowerCase(opt)}"/>
+			                </label>
+						</c:forEach>
+					</div></div>
+				</c:forEach>
+				<input type="hidden" name="roles">
+			</div>
+			
+			 <div class="alert alert-info adminMenus">
+				<label class="ui-label" for="tradecontrolMenus"><strong><spring:message code="menu.tradecontroller"/></strong></label><br> 
+				<c:forEach var="menu" items="${tradecontrolMenus}" varStatus="indexs"> 
+					<div class="form-group has-feedback has-success"><div class="btn-group">
+						<label class="btn btn-default"><strong><spring:message code="menu.${fn:toLowerCase(menu.code)}"/></strong></label> 
+						<c:forEach var="opt" items="${menu.opts}">
+							<label class="btn btn-default">
+								<form:checkbox path="opts" value="${menu.code}_${opt}"/> <spring:message code="menu.opt.${fn:toLowerCase(opt)}"/>
+			                </label>
+						</c:forEach>
+					</div></div>
+				</c:forEach>
+				<input type="hidden" name="roles">
+			</div>
 			
 			<!-- 账户管理 -->
 			<%-- <div class="alert alert-info userMenus">

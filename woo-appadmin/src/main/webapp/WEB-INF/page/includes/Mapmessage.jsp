@@ -19,7 +19,7 @@ input[type=checkbox], input[type=radio] {margin:0;}
 <div class="panel panel-default" style="background-color:#FFFFCC ">
     <div class="panel-heading" style="background-color:#FFFFCC ">
         <ol class="breadcrumb" style="background-color:#FFFFCC ">
-		  	<li><a href="javascript:history.go(-1)">地图</a></li>
+		  	<li><a href="javascript:history.go(-1)"><b><i>地图</i></b></a></li>
 		</ol>
     </div>
     <div style="display:none" >

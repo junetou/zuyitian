@@ -27,7 +27,7 @@
 <div class="panel panel-default" style="width:530px;"   style="background-color:#FFFFCC">
    <div class="panel-heading" style="width:530px; background-color:#FFFFCC; "  >
     <ol class="breadcrumb" style="background-color:#FFFFCC" >
-     <li>地图</li>
+     <li><b><i>地图</i></b></li>
      <li><input type="text" id="keyWord" placeholder="Search for..." name="keyWord" style="background-color:#FFFFCC" />
      <span><input type="button"  onclick="javascript:seachMap()" value="搜索" ></span>
      </li>
@@ -59,7 +59,7 @@
       <th><input id="thingsdate" type="text" name="thingsdate" required /></th>
       </tr>
       <tr class="success">
-      <th>物品种类</th>
+      <th>物品种类(必填，不清楚填无)</th>
       <th><input id="thingskind" type="text" name="thingskind" required /></th>
       </tr>
       <tr class="warning">

@@ -202,7 +202,7 @@ public class TradeController {
 		newtrade.setGoodsname(trade.getGoodsname());
 		newtrade.setSeller(trade.getSeller());
 		newtrade.setSellername(trade.getSellername());
-		newtrade.setSuccess(trade.getSuccess());
+		newtrade.setSuccess(3);
 		newtrade.setThing(trade.getThing());
 		newtrade.setTrade(trade.getTrade());
 		String judge=this.trademain.updatemessage(newtrade);

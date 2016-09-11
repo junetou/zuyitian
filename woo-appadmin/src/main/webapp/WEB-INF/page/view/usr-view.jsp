@@ -8,7 +8,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <ol class="breadcrumb">
-		  	<li class="active">用户管理</li>
+		  	<li class="active"><b><i>用户管理</i></b></li>
 		</ol>
     </div>
     <div class="panel-body">

@@ -135,33 +135,42 @@ public class DetailmessageDAO extends GenericDAO implements IDetailmessageDAO {
 		SearchResponse<IDetailmessage> searchResp = new SearchResponse<IDetailmessage>();
 		QueryHelper queryhelper=QueryHelper.getInstance();
 		AcctUserSearchCriteria criteria = searchReq.getCriteria();
-		PagingManagement pgm = searchReq.getPgm();
-		StringBuffer hql = new StringBuffer("select count(u.thingsId) from Detailmessage u ");
+		PagingManagement pgm = searchReq.getPgm();//select count(u.thingsId) from Detailmessage u where 1=1 and u.overanalyzed = 1 
+		StringBuffer hql = new StringBuffer("select count(u.thingsId) from Detailmessage u where 1=1 and u.overanalyzed = 1");
 		Session session = this.sessionFactory.getCurrentSession();
 		Query query = session.createQuery(hql.toString());
 		queryhelper.setToQuery(query, null);
 		Long count=(Long) query.uniqueResult();
 		searchResp.setTotalRecords(count);
-	    
+
 		if(count>0){
 			if(StringUtil.hasValue(keyword)){
-				hql=new StringBuffer("from Detailmessage u where 1=1 and u.name = :name and u.number=:number and u.overanalyzed = :overanalyzed ");
-				queryhelper.addParameter("name", keyword);
-				queryhelper.addParameter("number",usernumber);
-				queryhelper.addParameter("overanalyzed", 1);
+				hql=new StringBuffer("from Detailmessage u where 1=1 and number =  ");
+				hql.append(usernumber);
+				hql.append(" and name = '");
+				hql.append(keyword);
+				hql.append("' ");
+	            hql.append(" and overanalyzed=1 ");
+				query = session.createQuery(hql.toString());
+				int counts=query.list().size();
+				count=(long)counts;
+				searchResp.setTotalRecords(count);
+				queryhelper.setToQuery(query, pgm);
+				List<IDetailmessage> lists = query.list();
+				searchResp.setResults(lists);
 			}
 			else{
-				hql=new StringBuffer("from Detailmessage u where 1=1 and u.number = :number and u.overanalyzed = :overanalyzed ");
-				queryhelper.addParameter("number",usernumber);
-				queryhelper.addParameter("overanalyzed", 1);
-			}
-			query = session.createQuery(hql.toString());
-			queryhelper.setToQuery(query, pgm);
-			List<IDetailmessage> list=query.list();
-			int counts=query.list().size();
-			count=(long)counts;
-			searchResp.setTotalRecords(counts);
-			searchResp.setResults(list);
+			    hql = new StringBuffer("from Detailmessage u where 1=1 and number =  ");
+			    hql.append(usernumber);
+			    hql.append("and overanalyzed=1 ");
+		  		query = session.createQuery(hql.toString());
+				int counts=query.list().size();
+				count=(long)counts;
+				searchResp.setTotalRecords(count);
+				queryhelper.setToQuery(query, pgm);
+				List<IDetailmessage> lists = query.list();
+				searchResp.setResults(lists);
+			    }
 		}
         return searchResp;
 	}

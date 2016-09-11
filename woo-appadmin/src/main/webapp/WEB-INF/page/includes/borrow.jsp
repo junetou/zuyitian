@@ -9,7 +9,7 @@
 <div class="panel panel-default"  style="background-color:#FFFFCC">
     <div class="panel-heading"  style="background-color:#FFFFCC">
         <ol class="breadcrumb"  style="background-color:#FFFFCC">
-		  	<li class="active"><b>我要租借</b></li>
+		  	<li class="active"><b><i>我要租借</i></b></li>
 		</ol>
     </div>
     <div class="panel-body"  style="background-color:#FFFFCC">

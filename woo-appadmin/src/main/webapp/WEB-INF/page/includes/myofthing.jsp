@@ -9,7 +9,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <ol class="breadcrumb">
-		  	<li class="active">我发布的东西</li>
+		  	<li class="active"><b><i>我发布的物品</i></b></li>
 		</ol>
     </div>
     <div class="panel-body">

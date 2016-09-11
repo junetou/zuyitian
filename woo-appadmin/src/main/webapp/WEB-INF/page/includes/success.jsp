@@ -18,7 +18,7 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
 <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
-<title>交易成功</title>
+<title>租一天</title>
 </head>
 
 
@@ -30,7 +30,7 @@
     </ol>
    </div>
    <div style="background-color:#FFFFCC">
-   <p style="background-color:#FFFFCC">交易成功，感谢您的使用</p>
+   <p style="background-color:#FFFFCC">操作成功，感谢您的使用</p>
    </div>
 </div>
 
